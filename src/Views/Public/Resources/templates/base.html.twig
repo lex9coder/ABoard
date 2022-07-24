@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" class="light scroll-smooth" dir="ltr">
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Добро пожаловать!{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta content="Tailwind CSS Saas & Software Landing Page Template" name="description" />
+        <meta name="author" content="Shreethemes" />
+        {# <meta name="website" content="https://shreethemes.in" /> #}
+        {# <meta name="email" content="support@shreethemes.in" /> #}
+        <meta name="version" content="1.2.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <!-- favicon -->
+        <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+
+        <!-- Css -->
+        <!-- Main Css -->
+        <link href="/assets/css/line.css" type="text/css" rel="stylesheet" />
+        <link rel="stylesheet" href="/assets/css/icons.min.css" />
+        <link rel="stylesheet" href="/assets/css/tailwind.min.css" />
+
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+
+
+    </head>
+    
+    <body class="font-nunito text-base text-black dark:text-white dark:bg-slate-900">
+
+       {{ include('include/nav_top.html.twig') }}
+
+        {% block body %}{% endblock %}
+
+        <div class="fixed bottom-3 right-3">
+            <a href="" class="back-button btn btn-icon bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-full"><i data-feather="arrow-left" class="h-4 w-4"></i></a>
+        </div>
+
+        <!-- JAVASCRIPTS -->
+        <script src="/assets/libs/feather-icons/feather.min.js"></script>
+        <script src="/assets/js/plugins.init.js"></script>
+        <script src="/assets/js/app.js"></script>
+        <!-- JAVASCRIPTS -->
+    </body>
+</html>
