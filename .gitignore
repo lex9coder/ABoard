@@ -9,6 +9,7 @@
 ###< symfony/framework-bundle ###
 
 /_doc
+/photo
 ###> phpunit/phpunit ###
 /phpunit.xml
 .phpunit.result.cache

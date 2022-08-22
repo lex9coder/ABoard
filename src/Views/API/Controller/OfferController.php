@@ -4,16 +4,20 @@ namespace App\Views\API\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Domain\Category\CategoryService;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use App\Domain\Category\CategoryService;
+use App\Domain\Offer\OfferService;
+use Symfony\Component\HttpFoundation\Request;
 
 class OfferController extends AbstractController
 {
 
     private CategoryService $categoryService;
-    public function __construct(CategoryService $categoryService)
+    private OfferService $offerService;
+    public function __construct(CategoryService $categoryService, OfferService $offerService)
     {
         $this->categoryService = $categoryService;
+        $this->offerService = $offerService;
     }
 
     #[Route('/api/offer/get_category', name:'api_offer_category', methods:['GET'])]
@@ -32,5 +36,20 @@ class OfferController extends AbstractController
         return new JsonResponse($result);
     }
     
+    #[Route('/api/offer/get_phone', name:'api_offer_phone', methods:['GET'])]
+    public function get_phone(Request $request): JsonResponse
+    {
+        $result = [];
+        $id = $request->query->get('id');
+        $offer = $this->offerService->findOneById($id);
+        if ($offer) {
+            $result['status'] = 'ok';
+            $result['phone'] = $offer->getPhone();
+        } else {
+            $result['status'] = 'error';
+        }
+
+        return new JsonResponse($result);
+    }
 
 }

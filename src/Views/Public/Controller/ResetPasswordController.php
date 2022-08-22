@@ -163,7 +163,7 @@ class ResetPasswordController extends AbstractController
         }
 
         $email = (new TemplatedEmail())
-            ->from(new Address('info@luchmarket.ru', 'ЛучМаркет'))
+            ->from(new Address('info@luchmarket.ru', 'Aboard'))
             ->to($user->getEmail())
             ->subject('Запрос на сброс пароля')
             ->htmlTemplate('reset_password/email.html.twig')

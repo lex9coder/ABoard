@@ -122,3 +122,26 @@ function loadForm(id) {
 })(jQuery);
 
 
+// Offer
+(function ($) {
+	"use strict";
+
+	$(document).on('click', '#btn_offer_phone_show', function(){
+
+		var obj = $(this);
+		var offer_id = obj.siblings('[name=offer_id]').val();
+		$.ajax({
+			type: "GET",
+			url: '/api/offer/get_phone',
+			data: {'id':offer_id},
+			success: function(data){
+				if(data.status == 'ok') {
+					obj.html(data.phone);
+				}
+			},
+			dataType: 'json'
+		});
+		return false;
+	});
+
+})(jQuery);
