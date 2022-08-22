@@ -1,0 +1,22 @@
+<!-- main menu navbar start -->
+{% if menu %}
+<nav class="desktop-menu">
+    <ul itemscope itemtype="http://schema.org/SiteNavigationElement">
+        {% for m in menu %}
+        <li class="position-static">
+            <a href="{{ path('app_catalog', {'path':m.path}) }}">{{ m.title }}<i class="fa {% if m.children %}fa-angle-down{% endif %}"></i></a>
+             {% if m.children %}
+                <ul class="megamenu dropdown">
+                    {% for m_level_2 in m.children %}
+                        <li class="mega-title">
+                            <a href="{{ path('app_catalog', {'path':m_level_2.path}) }}">{{ m_level_2.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</nav>
+{% endif %}
+<!-- main menu navbar end -->

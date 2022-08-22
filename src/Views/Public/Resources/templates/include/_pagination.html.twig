@@ -1,0 +1,47 @@
+{% if pageCount is defined and pageCount > 1 %}
+<!-- start pagination area -->
+<div class="paginatoin-area text-center">
+  <ul class="pagination-box">
+    <div class="pagination">
+
+        {% set newQuery = [] %}
+        {% for name in query|keys %}
+           {% if name != 'page' %}
+                 {% set newQuery = newQuery|merge( {(name):query[name]} ) %}
+            {% endif %}
+        {% endfor %}
+        {% if previous is defined %}
+                {% if current == 2 %}
+                  <li><a class="previous" href="{{ path(route, newQuery) }}"><i class="pe-7s-angle-left"></i></a></li>
+                {% else %}
+                  <li><a class="previous" href="{{ path(route, query|merge({(pageParameterName): previous})) }}"><i class="pe-7s-angle-left"></i></a></li>
+                {% endif %}
+        {% endif %}
+
+        {% for page in pagesInRange %}
+            {% if page != current %}
+                  {% if page == 1 %}
+                    <li><a href="{{ path(route, newQuery) }}">{{ page }}</a></li>
+                  {% else %}
+                    <li><a href="{{ path(route, query|merge({(pageParameterName): page})) }}">{{ page }}</a></li>
+                  {% endif %}
+            {% else %}
+                {% if page == 1 %}
+                    <li class="active"><a href="{{ path(route, newQuery) }}">{{ page }}</a></li>
+                {% else %}
+                    <li class="active"><a href="{{ path(route, query|merge({(pageParameterName): page})) }}">{{ page }}</a></li>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+
+        {% if next is defined %}
+            <span class="next">
+                <li><a class="next" href="{{ path(route, query|merge({(pageParameterName): next})) }}"><i class="pe-7s-angle-right"></i></a></li>
+            </span>
+        {% endif %}
+    </div>
+
+  </ul>
+</div>
+<!-- end pagination area -->
+{% endif %}

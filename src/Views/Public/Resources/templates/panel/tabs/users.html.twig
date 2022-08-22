@@ -1,0 +1,45 @@
+<style>
+.panel-users-search-wrapper {
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+.panel-users-search-wrapper form input {
+  border: 1px solid #ccc;
+  font-size: 14px;
+  padding: 9px 10px;
+  outline: none;
+  width: 100%;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+</style>
+
+<!-- Single Tab Content Start -->
+<div class="tab-pane fade" id="profile" role="tabpanel">
+    <div class="myaccount-content">
+        <h5>Пользователи</h5>
+        <div class="myaccount-table table-responsive text-center">
+
+            <div class="panel-users-search-wrapper">
+                <form action="#" method="post" class=" d-block d-md-flex">
+                    <input type="text" placeholder="ФИО, телефон, e-mail" id="panel-users-search-input">
+                </form>
+            </div>
+
+            <table class="table table-bordered panel-users-search-result">
+                <thead class="thead-light">
+                    <tr>
+                        <th>№</th>
+                        <th>Имя</th>
+                        <th>Email</th>
+                        <th>Дата</th>
+                        <th>Статус</th>
+                    </tr>
+                </thead>
+                <tbody class="result"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Single Tab Content End -->

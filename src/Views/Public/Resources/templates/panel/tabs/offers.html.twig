@@ -1,0 +1,10 @@
+<!-- Single Tab Content Start -->
+<div class="tab-pane fade show active" id="ad" role="tabpanel">
+    <div class="myaccount-content shop-product-wrap row list-view">
+        <h5>Объявления</h5>
+        {% for offer in offer_loop %}
+            {% include "offer/view_thumbnail_list.html.twig" %}
+        {% endfor %}
+    </div>
+</div>
+<!-- Single Tab Content End -->

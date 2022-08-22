@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Password Reset Email Sent{% endblock %}
+
+{% block body %}
+    <!-- breadcrumb area start -->
+    <div class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb-wrap">
+                        <nav aria-label="breadcrumb">
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/"><i class="fa fa-home"></i></a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Восстановление пароля</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb area end -->
+
+    <div class="login-register-wrapper section-padding">
+        <div class="container">
+            <div class="member-area-from-wrap">
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div class="login-reg-form-wrap">
+                            <h5>Восстановление пароля</h5>
+
+                            <div class="single-input-item">
+                                <div class="login-reg-form-meta d-flex align-items-center justify-content-between">
+                                    Если учетная запись по указанному Email адресу найдена существует,
+                                    значит, только что было отправлено электронное письмо, содержащее ссылку,
+                                    которую вы можете использовать для сброса пароля.
+                                    <br>
+                                    <br>Срок действия этой ссылки истекает через {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.
+                                </div>
+                            </div>
+
+                            <div class="single-input-item">
+                                <a href="{{ path('app_forgot_password_request') }}">
+                                    <button class="btn btn-sqr">Повторить</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Новое объявление{% endblock %}
+
+{% block body %}
+    <!-- breadcrumb area start -->
+    <div class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb-wrap">
+                        <nav aria-label="breadcrumb">
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i></a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Новое объявление</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb area end -->
+
+    <!-- offer add wrapper start -->
+    <div class="offer-add-wrapper section-padding">
+        <div class="container">
+            <div class="section-bg-color">
+                <div class="row">
+                    <div class="col-lg-12 mb-3"><h2>Категория</h2></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="categiry-selected"></div>
+                        {% include "offer/add/category_select.html.twig" %}
+                    </div>
+                </div>
+
+                <div class="offer-add-form_wrapper"></div>
+
+            </div>
+        </div>
+    </div>
+    <!-- offer add wrapper end -->
+{% endblock %}

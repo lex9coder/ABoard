@@ -1,0 +1,326 @@
+<form method="post" id="form_offer_add" enctype="multipart/form-data">
+    <input type="hidden" name="category_id">
+    <input type="hidden" name="~address">
+
+    <div class="row">
+        <div class="col-lg-12 mb-3 mt-3"><h2>Наименование</h2></div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                    <p class="form-messege">Наименование</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <div class="title">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <input id="title" name="title" type="text" required="" class="w-100 form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 mb-3 mt-3"><h2>Цена</h2></div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                    <p class="form-messege">Цена</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <div class="price">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <input id="price" name="price" type="text" required="" class="w-100 form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 mb-3 mt-3"><h2>Расположение</h2></div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                    <p class="form-messege">Адрес</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <div class="address">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <input name="address" id="address_suggest" placeholder="Улица и номер дома" type="text" required="" class="w-100 form-control">
+                        <p id="notice" class="mt-2 hide"></p>
+                    </div>
+                    <div class="col-12">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3 mb-3">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-11">
+            <div class="map">
+                <div id="YMapsID" class="col-lg-9" style="min-width: 450px; height: 350px;"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-12 mb-3 mt-3"><h2>Контакты</h2></div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                    <p class="form-messege">Телефон</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <div class="phone">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <input id="phone" name="phone" placeholder="+7(___) ___-____" type="text" required="" class="w-100 form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 mb-3 mt-3"><h2>Описание</h2></div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                    <p class="form-messege">Описание</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <div class="description">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <textarea name="description" class="w-100" rows="10" required=""></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 mb-3 mt-3"><h2>Фото</h2></div>
+    </div>
+
+
+    <div class="row offer_image_upload">
+        <div class="col-lg-3">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                    <p class="form-messege">Фото</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <div class="photo">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 images">
+                        <div class="uploader-list-fdc1q">
+                            <label class="uploader-item-k5yBn uploader-item_add-nmllU button-button-hlsJg button-size-s-oOtXL button-default-XAWpO" data-marker="add">
+                                <input class="uploader-input-file-fBaRH dropInput" name="dropped_images[]" type="file" accept="image/gif,image/png,image/jpeg,image/pjpeg,image/heic" multiple="" data-marker="add/input" value="">
+                            </label>
+                            <div class="uploader-drag-target-J0zkw">
+                                <div class="uploader-drag-target-label-UP2g5"><i class="uploader-drag-target-icon-TWmp0"></i>Перетащите сюда изображения</div>
+                            </div>
+                        </div>
+                        <ul class="ui-sortable" style=""></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3 mt-3">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-9">
+            <button class="btn btn-sqr" type="submit" id="form_offer_add_save_btn">Сохранить</button>
+        </div>
+    </div>
+
+</form>
+
+<script type="text/javascript">
+    function handleFileSelect(evt) {
+        var files = evt.target.files; // FileList object
+        // Loop through the FileList and render image files as thumbnails.
+        for (var i = 0, f; f = files[i]; i++) {
+            // Only process image files.
+            if (!f.type.match('image.*')) {
+            continue;
+            }
+            var reader = new FileReader();
+            // Closure to capture the file information.
+            reader.onload = (function (theFile) {
+            return function (e) {
+                // Render thumbnail.
+                $("<li class=wizard><a href='#' onclick='$(this).closest(\"li\").remove(); return false;' class='delete'><i class='pe-7s-close'></i></a><span class='ok__img'><i class='pe-7s-check'></i></span><img onerror='$(this).closest(\"li\").remove();' src='" + e.target.result + "' /><input name=images_urls[] type=hidden value='" + theFile.name + "'></li>").appendTo('div .images ul');
+                {# temp_input = dropInput.clone(); #}
+                {# console.log(temp_input); #}
+                // $('.dropInput').hide();
+                {# $('#dropZone').append(temp_input); #}
+                {# $("#dropZone").css('border', '1px solid #d0d0d0').css('background-color', '#ffffff'); #}
+            };
+            })(f);
+
+            // Read in the image file as a data URL.
+            reader.readAsDataURL(f);
+        }
+    }
+
+    $(document).ready(function() {
+
+        if (window.File && window.FileReader && window.FileList) {
+            $('.dropInput').on("change", handleFileSelect);
+            {# dropInput = $('.dropInput').last().clone(); #}
+        }
+    });
+
+</script>
+
+
+{# https://webstool.ru/jquery.maskedinput.html #}
+<script src="/assets/js/plugins/jquery.maskedinput.min.js"></script>
+<script type="text/javascript">
+    $("#phone").mask("+7(999) 999-9999");
+</script>
+
+<script src="https://api-maps.yandex.ru/2.1/?apikey=19f0614b-61ea-45a7-96e0-32e08efa92e1&load=package.full&lang=ru_RU&onload=init"></script>
+<script type="text/javascript">
+    function init (ymaps) {
+
+        function geocode() {
+            // Забираем запрос из поля ввода.
+            var request = $('#address_suggest').val();
+            // Геокодируем введённые данные.
+            ymaps.geocode(request).then(function (res) {
+                var obj = res.geoObjects.get(0),
+                    error, hint;
+
+                if (obj) {
+                    // Об оценке точности ответа геокодера можно прочитать тут: https://tech.yandex.ru/maps/doc/geocoder/desc/reference/precision-docpage/
+                    switch (obj.properties.get('metaDataProperty.GeocoderMetaData.precision')) {
+                        case 'exact':
+                            break;
+                        case 'number':
+                        case 'near':
+                        case 'range':
+                            error = 'Неточный адрес, требуется уточнение';
+                            hint = 'Уточните номер дома';
+                            break;
+                        case 'street':
+                            error = 'Неполный адрес, требуется уточнение';
+                            hint = 'Уточните номер дома';
+                            break;
+                        case 'other':
+                        default:
+                            error = 'Неточный адрес, требуется уточнение';
+                            hint = 'Уточните адрес';
+                    }
+                } else {
+                    error = 'Адрес не найден';
+                    hint = 'Уточните адрес';
+                }
+
+                // Если геокодер возвращает пустой массив или неточный результат, то показываем ошибку.
+                if (error) {
+                    showError(error);
+                    {# showMessage(hint); #}
+                } else {
+                    showResult(obj);
+                }
+            }, function (e) {
+                console.log(e)
+            })
+        } // geocode
+
+        function showError(message) {
+            $('#notice').text(message);
+            $('#address_suggest').addClass('is-invalid');
+        }
+
+        function showResult(obj) {
+            // Удаляем сообщение об ошибке, если найденный адрес совпадает с поисковым запросом.
+            $('#address_suggest').removeClass('is-invalid');
+            $('#notice').text("");
+
+            var mapContainer = $('#YMapsID'),
+                bounds = obj.properties.get('boundedBy'),
+            // Рассчитываем видимую область для текущего положения пользователя.
+                mapState = ymaps.util.bounds.getCenterAndZoom(
+                    bounds,
+                    [mapContainer.width(), mapContainer.height()]
+                ),
+            // Сохраняем полный адрес для сообщения под картой.
+                address = [obj.getCountry(), obj.getAddressLine()].join(', '),
+            // Сохраняем укороченный адрес для подписи метки.
+                shortAddress = [obj.getThoroughfare(), obj.getPremiseNumber(), obj.getPremise()].join(' ');
+            // Убираем контролы с карты.
+            mapState.controls = [];
+
+            placemark = new ymaps.Placemark(
+                myMap.getCenter(), {
+                    iconCaption: shortAddress,
+                    balloonContent: shortAddress
+                }, {
+                    preset: 'islands#redCircleDotIcon'
+                });
+            myMap.geoObjects.add(placemark);
+
+            myMap.setCenter(mapState.center, mapState.zoom);
+            placemark.geometry.setCoordinates(mapState.center);
+            placemark.properties.set({iconCaption: shortAddress, balloonContent: shortAddress});
+        }
+
+        // Подключаем поисковые подсказки к полю ввода.
+        var suggestAddressView = new ymaps.SuggestView('address_suggest'),
+            map,
+            placemark;
+
+        var myMap = new ymaps.Map("YMapsID", {
+            center: [55.87, 37.66],
+            zoom: 11,
+            controls: []
+        });
+        myMap.controls.add('zoomControl');
+
+        $('#address_suggest').bind('blur keyup', function(e){
+            if (e.type === 'blur' || e.keyCode === 13) {
+                geocode();
+            }
+        });
+
+
+    }
+</script>

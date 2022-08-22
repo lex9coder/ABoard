@@ -3,52 +3,71 @@
 {% block title %}Вход{% endblock %}
 
 {% block body %}
-
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
-
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% endif %}
-
-<section class="md:h-screen py-36 flex items-center bg-[url('../../assets/images/auth.jpg')] bg-no-repeat bg-center">
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
-    <div class="container">
-        <div class="flex justify-center">
-            <div class="max-w-[400px] w-full m-auto p-6 bg-white dark:bg-slate-900 shadow-md dark:shadow-gray-700 rounded-md">
-                <a href="index.html"><img src="assets/images/logo-icon-64.png" class="mx-auto" alt=""></a>
-                <h5 class="my-6 text-xl font-semibold">Войти</h5>
-                <form method="post">
-                    <div class="grid grid-cols-1">
-
-                        <div class="mb-4">
-                            <label class="font-semibold" for="inputEmail">Email:</label>
-                            <input name="email" id="inputEmail" type="email" class="form-input mt-3" placeholder="email" value="{{ last_username }}" autocomplete="email" required autofocus>
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="font-semibold" for="inputPassword">Пароль:</label>
-                            <input name="password" id="inputPassword" type="password" class="form-input mt-3" placeholder="Пароль" autocomplete="current-password" required>
-                        </div>
-
-   <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
-
-                        <div class="mb-4">
-                            <input type="submit" class="btn bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md w-full" value="Войти">
-                        </div>
-
-                        <div class="text-center">
-                            <span class="text-slate-400 me-2"><a href="auth-login.html" class="text-black dark:text-white font-bold">Зарегистрироваться</a>
+        <!-- breadcrumb area start -->
+        <div class="breadcrumb-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="breadcrumb-wrap">
+                            <nav aria-label="breadcrumb">
+                                <ul class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i></a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Вход</li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
-                </form>
+                </div>
+            </div>
+        </div>
+        <!-- breadcrumb area end -->
+        
+    <!-- login register wrapper start -->
+    <div class="login-register-wrapper section-padding">
+        <div class="container">
+            <div class="member-area-from-wrap">
+                <div class="row">
+                    <!-- Login Content Start -->
+                    <div class="col-lg-6">
+                        <div class="login-reg-form-wrap">
+                            <h5>Войти</h5>
+
+                                {% for message in app.flashes('info') %}
+                                    <div class="single-input-item alert alert-info">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+
+                                {% if error %}
+                                    <div class="text-danger mt-2">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                                {% endif %}
+
+                            <form method="post">
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                                <div class="single-input-item">
+                                    <input type="email" placeholder="Email" value="{{ last_username }}" autocomplete="email" name="email" required />
+                                </div>
+                                <div class="single-input-item">
+                                    <input type="password" name="password" placeholder="Пароль" required />
+                                </div>
+                                <div class="single-input-item">
+                                    <div class="login-reg-form-meta d-flex align-items-center justify-content-between">
+                                        <a href="{{ path('app_register') }}" class="forget-pwd">Регистрация</a>
+                                        <a href="{{ path('app_forgot_password_request') }}" class="forget-pwd">Забыли пароль?</a>
+                                    </div>
+                                </div>
+                                <div class="single-input-item">
+                                    <div class="login-reg-form-meta d-flex align-items-center justify-content-between">
+                                        <button class="btn btn-sqr" type="submit">Войти</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Login Content End -->
+                </div>
             </div>
         </div>
     </div>
-</section>
+    <!-- login register wrapper end -->
 {% endblock %}

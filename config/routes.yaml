@@ -1,3 +1,7 @@
 controllers:
     resource: ../src/Views/Public/Controller/
     type: attribute
+
+controllers_api:
+    resource: ../src/Views/API/Controller/
+    type: attribute

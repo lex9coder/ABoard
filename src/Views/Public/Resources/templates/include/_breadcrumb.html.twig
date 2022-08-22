@@ -1,0 +1,44 @@
+<!-- breadcrumb area start -->
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-wrap">
+                    <nav aria-label="breadcrumb">
+                        <ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+                            <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <a itemprop="item" href="/" alt="Главная" title="Главная">
+                                    <i class="fa fa-home"></i>
+                                    <meta itemprop="name" content="Главная" />
+                                </a>
+                                <meta itemprop="position" content="1" />
+                            </li>
+
+                            {% for item in loop %}
+                                {% if loop.last == false %}
+                                    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                        <a itemprop="item" href="{{ item.path }}">
+                                            <meta itemprop="name" content="{{ item.title }}" />
+                                            {{ item.title }}
+                                        </a>
+                                        <meta itemprop="position" content="{{ loop.index + 1 }}" />
+                                    </li>
+                                {% else %}
+                                    <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                        <a itemprop="item">
+                                            <meta itemprop="name" content="{{ item.title }}" />
+                                            {{ item.title }}
+                                        </a>
+                                        <meta itemprop="position" content="{{ loop.index + 1 }}" />
+                                    </li>
+                                {% endif %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb area end -->

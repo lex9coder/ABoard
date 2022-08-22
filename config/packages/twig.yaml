@@ -1,5 +1,11 @@
 twig:
+    cache: false
     default_path: '%kernel.project_dir%/src/Views/Public/Resources/templates'
+    # globals:
+        # param: '@App\Domain\ParamsService'
+    # paths:
+        # 'email/default/templates': ~
+        # 'backend/templates': 'admin'
 
 when@test:
     twig:

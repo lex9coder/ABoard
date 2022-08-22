@@ -1,0 +1,200 @@
+.offer-add-wrapper .categiry-selected .dropdown-menu {position: relative;}
+.offer-add-wrapper .categiry-selected .title {font-size: 13px;}
+.offer-add-wrapper .categiry-selected .category_select_list{ border-radius: 0;}
+
+.uploader-list-fdc1q {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -10px;
+}
+
+
+.uploader-drag-target-J0zkw {
+
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    text-align: center;
+    border: 1px dashed #B8B8B8;
+    border-radius: 2px;
+    box-sizing: border-box;
+    z-index: 10;
+
+}
+
+.uploader-item-k5yBn, .uploader-item-k5yBn {
+    box-sizing: border-box;
+    margin: 0 10px 10px 0;
+      margin-right: 10px;
+    border: 1px solid #D6D6D6;
+    border-radius: 2px;
+    background: #ffffff;
+    transition: transform .2s linear;
+  }
+
+  .uploader-input-file-fBaRH {
+    visibility: hidden;
+  }
+
+  .button-button-hlsJg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: inherit;
+
+}
+
+.uploader-item_add-nmllU {
+    margin-right: 0;
+    overflow: hidden;
+    background: url(/assets/images/8bb1db058a01fabddc8a.svg) center no-repeat #ffffff;
+}
+
+.uploader-item-k5yBn {
+    width: 100px;
+    height: 75px;
+}
+
+/* offer image upload */
+#dropZone {
+  margin-bottom: 10px;
+  margin-right: 16px;
+  margin-top: -20px;
+  height: 80px;
+  text-align: center;
+  background-color: white;
+  border: 1px solid #d0d0d0;
+  display: none;
+  position: relative;
+}
+.dropInput {
+  margin-top: -45px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;
+  -moz-opacity: 0;
+  filter: alpha(opacity=0);
+  cursor: pointer;
+}
+#dropMessage {
+  height: 45px;
+  font-size: 18px;
+  margin-top: 0;
+}
+.offer_image_upload .images ul.ui-sortable {
+  display: flex;
+  padding-left: 0;
+  margin-top: 30px;
+}
+
+.offer_image_upload .block li {
+  clear: left;
+  overflow: hidden;
+  margin-bottom: 7px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.offer_image_upload .images li {
+  border: 1px solid #32b432;
+  width: 170px;
+  height: 170px;
+  position: relative;
+  padding: 5px;
+  transition: all .25s ease-in-out;
+  border-radius: 4px;
+  /* box-sizing: content-box; */
+  flex-shrink: 0;
+  margin-right: 7px;
+  margin-bottom: 7px;
+  background-color: #ffffff;
+  display: -moz-inline-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  *zoom: 1;
+  *display: inline;
+  word-spacing: normal;
+  vertical-align: top;
+  text-align: center;
+}
+.offer_image_upload .images li img {
+  vertical-align: middle;
+  max-width: 140px;
+  max-height: 140px;
+}
+.offer_image_upload .images li:hover {
+  border: 1px solid #b3013f;
+}
+.offer_image_upload .images li::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  transition: all .25s ease-in-out;
+  right: 0;
+  content: '';
+  border: 25px solid transparent;
+    border-top-color: transparent;
+    border-top-style: solid;
+    border-top-width: 25px;
+    border-right-color: transparent;
+    border-right-style: solid;
+    border-right-width: 25px;
+  border-top: 25px solid #32b432;
+  border-right: 25px solid #32b432;
+}
+
+.offer_image_upload .images li:hover a.delete {
+  display: block;
+  z-index: 300;
+  opacity: 1;
+}
+.offer_image_upload .images a.delete {
+  width: 15px;
+  height: 15px;
+  right: 11px;
+  top: 0;
+  transition: all .25s ease-in-out;
+  opacity: 0;
+  font-size: 20px;
+  color: #fff;
+  z-index: 200;
+  position: absolute;
+}
+.offer_image_upload .images a.delete i{ color: white; }
+
+.offer_image_upload .images li:hover .ok__img {
+  opacity: 0;
+  z-index: 200;
+}
+.offer_image_upload .images li .ok__img {
+  position: absolute;
+  right: 6px;
+  top: 0;
+  transition: all .25s ease-in-out;
+  opacity: 1;
+  z-index: 200;
+  font-size: 20px;
+  color: #fff;
+}
+.offer_image_upload .images li:hover::before {
+    border: 25px solid transparent;
+        border-top-color: transparent;
+        border-top-style: solid;
+        border-top-width: 25px;
+        border-right-color: transparent;
+        border-right-style: solid;
+        border-right-width: 25px;
+    border-top: 25px solid #b3013f;
+    border-right: 25px solid #b3013f;
+
+}

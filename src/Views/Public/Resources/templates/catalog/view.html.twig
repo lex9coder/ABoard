@@ -1,0 +1,69 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Каталог {{ catalog.title }}{% endblock %}
+
+{% block body %}
+
+    {{ render(controller('App\\Views\\Public\\Controller\\CategoryController::getBreadcrumb', {id: catalog.id})) }}
+
+    <!-- page main wrapper start -->
+    <div class="shop-main-wrapper section-padding">
+        <div class="container">
+            <div class="row">
+
+            {{ render(controller('App\\Views\\Public\\Controller\\AsideController::getLeftBlock', {id: catalog.id})) }}
+
+                <!-- shop main wrapper start -->
+                <div class="col-lg-9 order-1 order-lg-2">
+                    <div class="shop-product-wrapper">
+                        <!-- shop product top wrap start -->
+                        <div class="shop-top-bar">
+                            <div class="row align-items-center">
+                                <div class="col-lg-7 col-md-6 order-2 order-md-1">
+                                    <div class="top-bar-left">
+                                        <div class="product-view-mode">
+                                            <a class="active" href="#" data-target="grid-view" data-toggle="tooltip"
+                                                title="Grid View"><i class="fa fa-th"></i></a>
+                                            <a href="#" data-target="list-view" data-toggle="tooltip"
+                                                title="List View"><i class="fa fa-list"></i></a>
+                                        </div>
+                                        <div class="product-amount">
+                                            {# <p>Showing 1–16 of 21 results</p> #}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-md-6 order-1 order-md-2">
+                                    {# <div class="top-bar-right">
+                                        <div class="product-short">
+                                            <p>Sort By : </p>
+                                            <select class="nice-select" name="sortby">
+                                                <option value="trending">Relevance</option>
+                                                <option value="sales">Name (A - Z)</option>
+                                                <option value="sales">Name (Z - A)</option>
+                                                <option value="rating">Price (Low &gt; High)</option>
+                                                <option value="date">Rating (Lowest)</option>
+                                                <option value="price-asc">Model (A - Z)</option>
+                                                <option value="price-asc">Model (Z - A)</option>
+                                            </select>
+                                        </div>
+                                    </div> #}
+                                </div>
+                            </div>
+                        </div>
+                        <!-- shop product top wrap start -->
+
+                        <!-- product item list wrapper start -->
+                        <div class="shop-product-wrap grid-view row mbn-30">
+                            {% include 'catalog/grid.html.twig' %}
+                        </div>
+                        <!-- product item list wrapper end -->
+                       
+                        {% include 'include/_pagination.html.twig' %}
+                </div>
+                <!-- shop main wrapper end -->
+            </div>
+        </div>
+    </div>
+    <!-- page main wrapper end -->
+
+{% endblock %}

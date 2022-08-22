@@ -1,0 +1,8 @@
+<h1>Здравствуйте, {{ username }} </h1>
+
+<p>
+    Ссылка для подтверждения Email адреса: <a href="{{ signedUrl }}">Подтвердить</a>
+    {# Ссылка работает в течение {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}. #}
+</p>
+<br><br>
+С уважением, ABoard

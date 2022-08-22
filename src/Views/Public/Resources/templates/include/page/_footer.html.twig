@@ -1,0 +1,68 @@
+<footer class="footer-widget-area" itemscope itemtype="http://schema.org/WPFooter">
+     <div class="footer-top section-padding">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="widget-item">
+                        <div class="widget-title">
+                            <div class="widget-logo">
+                                <a href="/">
+                                    <img src="/assets/images/logo.png" alt="ABoard" style="width:50%">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="widget-body"><p></p></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="widget-item">
+                        <h6 class="widget-title">Контакты</h6>
+                        <div class="widget-body">
+                            <address class="contact-block"><ul></ul></address>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="widget-item">
+                        <h6 class="widget-title">Информация</h6>
+                        <div class="widget-body">
+                            <ul class="info-list">
+{#                                 <li><a href="#">about us</a></li>
+                                <li><a href="#">Delivery Information</a></li>
+                                <li><a href="#">privet policy</a></li>
+                                <li><a href="#">Terms &amp; Conditions</a></li>
+                                <li><a href="#">contact us</a></li> #}
+                                {# {% if sitemap_html_enable  %}<li><a href="/sitemap.html">Карта сайта</a></li>{% endif %} #}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% if subscribe_enable is defined %}
+            <div class="row align-items-center mt-20">
+                <div class="col-md-6">
+                    <div class="newsletter-wrapper">
+                        <h6 class="widget-title-text">Подпишитесь на наши новости</h6>
+                        <form class="newsletter-inner" id="subscribe__form">
+                            <input type="email" class="news-field" id="mc-email" autocomplete="off" placeholder="Введитe электронную почту" name="email" required>
+                            <button class="news-btn">Подписаться</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="copyright-text text-center">
+                        <p class="copyright-text">&copy; <span itemprop="copyrightYear">{{ 'now'|date('Y') }}</span> <a href="/"><span itemprop="copyrightHolder">ABoard</span></a></p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

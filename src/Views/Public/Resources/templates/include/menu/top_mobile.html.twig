@@ -1,0 +1,23 @@
+<!-- mobile menu navigation start -->
+{% if menu %}
+<nav>
+    <ul class="mobile-menu">
+        {% for m in menu %}
+            <li class="menu-item-has-children">
+                <span class="menu-expand"><i></i></span>
+                <a href="#">{{ m.title }}</a>
+            <ul class="megamenu dropdown" style="display: none;">
+                <li class="mega-title menu-item-has-children"><span class="menu-expand"><i></i></span><a href="#">column 01</a>
+                    <ul class="dropdown" style="display: none;">
+                        <li><a href="shop.html">shop grid left sidebar</a></li>
+                        <li><a href="shop-grid-right-sidebar.html">shop grid right sidebar</a></li>
+                        <li><a href="shop-list-left-sidebar.html">shop list left sidebar</a></li>
+                        <li><a href="shop-list-right-sidebar.html">shop list right sidebar</a>
+                        </li>
+                    </ul>
+                </li>
+        {% endfor %}
+    </ul>
+</nav>
+{% endif %}
+<!-- mobile menu navigation end -->
