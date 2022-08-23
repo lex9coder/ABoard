@@ -75,7 +75,9 @@
                                             <a class="btn btn-cart2" href="#" id="btn_offer_phone_show">Показать номер</a>
                                         </div>
                                     </div>
-                                    <p class="pro-desc">{{ offer.description|raw }}</p>
+                                    <p class="pro-desc">
+                                        <pre style="font-size: 15px;">{{ offer.description|raw }}</pre>
+                                    </p>
 
                                     {# <div class="useful-links">
                                         <a href="#" data-toggle="tooltip" title="Compare"><i class="pe-7s-refresh-2"></i>compare</a>
